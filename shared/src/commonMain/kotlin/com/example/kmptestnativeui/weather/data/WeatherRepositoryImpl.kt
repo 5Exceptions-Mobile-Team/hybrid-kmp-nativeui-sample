@@ -1,6 +1,7 @@
 package com.example.kmptestnativeui.weather.data
 
 import com.example.kmptestnativeui.core.remote.KtorApi
+import com.example.kmptestnativeui.core.remote.createHttpClient
 import com.example.kmptestnativeui.logger.MainLog
 import com.example.kmptestnativeui.weather.domain.model.WeatherResponse
 import com.example.kmptestnativeui.weather.domain.repository.WeatherRepository
@@ -14,7 +15,8 @@ import io.ktor.http.Url
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
-class WeatherRepositoryImpl(val client : HttpClient) :  WeatherRepository{
+class WeatherRepositoryImpl :  WeatherRepository{
+    val client : HttpClient = createHttpClient()
     override suspend fun getWeather(lat: String, long: String): String {
         client.config {
             install(ContentNegotiation){

@@ -23,9 +23,9 @@ fun getSharedModules() = listOf(
 
 
 private val accountModule = module {
-    factory { WeatherRepositoryImpl(createHttpClient()) }
+    factory { WeatherRepositoryImpl() }
     factory { WeatherUseCase(weatherRepository = get()) }
-    single<WeatherRepository> { WeatherRepositoryImpl(createHttpClient()) }
+    single<WeatherRepository> { WeatherRepositoryImpl() }
 }
 
 val useCaseModule = module {
@@ -33,5 +33,5 @@ val useCaseModule = module {
 }
 
 val repositoryModule = module {
-    factory { WeatherRepositoryImpl(createHttpClient()) } bind WeatherRepository::class
+    factory { WeatherRepositoryImpl() } bind WeatherRepository::class
 }
