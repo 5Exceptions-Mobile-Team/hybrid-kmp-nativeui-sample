@@ -3,14 +3,15 @@
 This project is a **Kotlin Multiplatform (KMP)** module containing shared business logic and data models, designed to be used across Android, iOS, and other supported platforms.
 
 ## 🧱 Project Structure
+```
 shared/ 
-├── src/ │ 
-├── commonMain/ # Shared code across all platforms │ 
-├── commonTest/ # Shared tests │ 
-├── androidMain/ # (Optional) Android-specific code │ 
-├── iosMain/ # (Optional) iOS-specific code 
+├── src/ 
+│   ├── commonMain/ # Shared code across all platforms 
+│   ├── commonTest/ # Shared tests 
+│   ├── androidMain/ # (Optional) Android-specific code 
+│   ├── iosMain/ # (Optional) iOS-specific code 
 ├── build.gradle.kts # KMP module build config
-
+```
 
 > This project currently focuses **only on shared logic**, keeping platform-specific code to a minimum or none.
 
